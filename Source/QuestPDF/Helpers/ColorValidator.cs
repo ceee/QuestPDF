@@ -26,15 +26,7 @@ namespace QuestPDF.Helpers
 
             static bool IsColorValid(string color)
             {
-                try
-                {
-                    SKColor.Parse(color);
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                return SKColor.TryParse(color, out _);
             }
         }
     }
